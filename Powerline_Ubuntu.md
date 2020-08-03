@@ -1,46 +1,35 @@
-# Powerline no Ubuntu
+# Powerline - WSL ou Sistema Linux de forma simples.
 
-Instalando os pacotes
+Primeiro caso esteja utilizando WSL instale as devidas fontes em seu sistema Windows. A mais popular é um projeto opensource criada pela propria Microsofit e pode ser adquirida aqui [Cascadia Code PL](https://github.com/microsoft/cascadia-code/releases) Eu a utilizo no WSL e mesmo no sistem Linux puro também. 
 
-```bash
-sudo apt install fonts-cascadia-code git wget
-```
-
-Preparando para ativer o Powerline
+instale as fontes em sua distro WSL ou sistema Linux também.
 
 ```bash
-mkdir /usr/local/bin/powerline
+sudo apt install fonts-powerline
 ```
+
+Agora vamos a instalação do powerline
 
 ```bash
-git clone https://github.com/powerline/powerline.git /usr/local/bin/powerline/
+sudo apt install powerline powerline-gitstatus python-powerline python3-powerline vim-airline
 ```
+
+Após a instalação vamos ativar o powerline em seu BASH simplestmente pondo as linhas a seguir ao fim do seu arquivo $HOME/.bashrc
 
 ```bash
-wget https://github.com/powerline/powerline/raw/develop/font/PowerlineSymbols.otf -O /usr/share/fonts/PowerlineSymbols.otf
+# Powerline configuration
+if [ -f /usr/share/powerline/bindings/bash/powerline.sh ]; then
+  powerline-daemon -q
+  POWERLINE_BASH_CONTINUATION=1
+  POWERLINE_BASH_SELECT=1
+  source /usr/share/powerline/bindings/bash/powerline.sh
+fi
 ```
+
+Para aplicar na sua atual sessão, execute:
 
 ```bash
-wget https://github.com/powerline/powerline/raw/develop/font/10-powerline-symbols.conf -O /etc/fonts/conf.d/10-powerline-symbols.conf
+source ~/.bashrc
 ```
 
-Pronto, agora execute o comando para ativar o powerline quando vc logar no terminal.
 
-```bash
-echo '. /usr/local/bin/powerline/powerline/bindings/bash/powerline.sh' >> ~/.bashrc
-```
-
-### No VSCode
-
-Edite o settings.json e mude as seguintes linhas:
-
-```json
-"editor.fontFamily": "'Cascadia Code PL', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
-"editor.fontLigatures": true,
-```
-
-E logo abaixo adicione a seguinte linha:
-
-```json
-
-```
