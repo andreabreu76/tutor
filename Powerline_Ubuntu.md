@@ -5,7 +5,7 @@ Primeiro caso esteja utilizando WSL instale as devidas fontes em seu sistema Win
 instale as fontes em sua distro WSL ou sistema Linux também.
 
 ```bash
-sudo apt install fonts-powerline
+sudo apt install fonts-powerline fonts-cascadia-code
 ```
 
 Agora vamos a instalação do powerline
