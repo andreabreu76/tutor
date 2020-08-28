@@ -8,6 +8,20 @@ instale as fontes em sua distro WSL ou sistema Linux também.
 sudo apt install fonts-powerline fonts-cascadia-code
 ```
 
+Caso a instalação do pacote <mark>fonts-cascadia-code</mark> dê erro é porque ele não encontra-se em seu repositorio. Então devemos proceguir com a instalação manual. 
+
+Baixe o pacote:
+
+```bash
+wget http://ftp.br.debian.org/debian/pool/main/f/fonts-cascadia-code/fonts-cascadia-code_2005.15-1_all.deb
+```
+
+Agora instale ele:
+
+```bash
+sudo dpkg -i fonts-cascadia-code_2005.15-1_all.deb
+```
+
 Agora vamos a instalação do powerline
 
 ```bash
@@ -31,5 +45,3 @@ Para aplicar na sua atual sessão, execute:
 ```bash
 source ~/.bashrc
 ```
-
-
