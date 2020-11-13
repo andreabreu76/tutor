@@ -13,7 +13,7 @@ Adicionei o utilitario `WGET` a linha que executa a instalação das dependencia
 ```dockerfile
 RUN wget -O /usr/local/bin/wait-for-it.sh https://raw.githubusercontent.com/vishnubob/wait-for-it/8ed92e8cab83cfed76ff012ed4a36cef74b28096/wait-for-it.sh \
     && chmod +x /usr/local/bin/wait-for-it.sh
-    
+
 CMD cd /var/www/ && chmod +x passportGen.sh 
 ```
 
@@ -35,7 +35,7 @@ No diretorio declarado em volumes do arquivo `docker-compose.yml`, pode ser cria
 #!/usr/bin/env bash
 
 ## (-e) SAIDA QUANDO ENCONTRA ERROS, UTILIZE O (-x) PARA DEBUG 
-set -e
+set -x
 
 [[ -f "/tmp/result.tmp" ]] && eval "rm /tmp/result.tmp"
 
@@ -44,21 +44,20 @@ eval "cd /var/www/ && php artisan passport:install >> /tmp/result.tmp"
 getId=$(cat /tmp/result.tmp | grep -e "Client ID" -m 1 | awk '{print $3}')
 getSecret=$(cat /tmp/result.tmp | grep -e "Client secret" -m 1 | awk '{print $3}')
 
-## DECLARA O PASSPORT_ID E SECRET NO PROFILE QUE SERA CARREGADO POR TODOS OS CONSOLES
-# [[ -f "/etc/profile.d/passportEnv.sh" ]] && eval "rm /etc/profile.d/passportEnv.sh"
+if [ -f "/var/www/.env" ]; then
 
-# printf "#!/bin/bash \n\n" >> /etc/profile.d/passportEnv.sh
-# printf "PASSPORT_ID=$getId \n" >> /etc/profile.d/passportEnv.sh
-# printf "PASSPORT_SECRET=$getSecret \n\n" >> /etc/profile.d/passportEnv.sh
-# printf "export PASSPORT_ID \n" >> /etc/profile.d/passportEnv.sh
-# printf "export PASSPORT_SECRET \n" >> /etc/profile.d/passportEnv.sh
+    idComand="sed -i '/PASSPORT_CLIENT_ID/c\PASSPORT_CLIENT_ID=$getId' /var/www/.env"
+    secretComand="sed -i '/PASSPORT_CLIENT_SECRET/c\PASSPORT_CLIENT_SECRET=$getSecret' /var/www/.env"
 
-## DECLARA O PASSPORT_ID E SECRET NO AMBIENTE GLOBAL NÃO USADO EM CONSOLES
-[[ -f "/etc/environment" ]] && eval "rm /etc/environment"
+else
 
-printf "PASSPORT_ID=$getId \n" >> /etc/environment
-printf "PASSPORT_SECRET=$getSecret \n\n" >> /etc/environment
+    idComand="echo 'PASSPORT_CLIENT_ID=$getId' >> /var/www/.env"
+    secretComand="echo 'PASSPORT_CLIENT_SECRET=$getSecret' >> /var/www/.env"
 
+fi
+
+eval $idComand
+eval $secretComand
 eval "tail -f /dev/null"
 ```
 
@@ -71,17 +70,3 @@ Testo a existencia da saida do comando que ira gerar os dados que precisamos, is
 Executo o comando e em seguida capturo filtrando a saída do comando para obter somente os dados que preciso
 
 Gero um arquivo a ser utilizado pelo sistema. 
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -2,8 +2,6 @@
 
 Aqui eu utilizo chaves ssh, tanto para o bitbucket quanto para o CodeCommit. Então primeiro vou mostrar como configurar este tipo de acesso em ambos os ambientes.
 
-
-
 Primeiro, criamos nossa chave. Caso vc já tenha a sua por favor pule este passo. 
 
 De acordo com o artigo [Secure Secure Shell]([Secure Secure Shell](https://stribika.github.io/2015/01/04/secure-secure-shell.html)) a forma mais segura em 2020 de ter uma chave encripitada é executando o ssh-keygen utilizando os parametros abaixo.
@@ -44,7 +42,6 @@ Nele você adiciona as seguintes linhas:
 Host git-codecommit.*.amazonaws.com
   User <SEU_ID_DE_CHAVE_COPIADO>
   IdentityFile ~/.ssh/chavesegura_profissional.pub
- 
 ```
 
 Pronto... se foi feito tudo certo, agora vc deve acessar todos seus repositorios via SSH. 
@@ -81,7 +78,6 @@ origin  git@bitbucket.org:meuusuario/microservico.git (push)
 
 Então: 
 
-
 - Todo pull feito em *origin* irá puxar do REPO Bitibucket.
 
 - Todo push feito em *origin* irá publicar no REPO Bitbucket
@@ -90,12 +86,24 @@ Então:
 
 - Todo push feito em *homolog* irá publicar no REPO CodeCommit
 
-
-
-E após o *CODACI* aprovar o pull-request no Bitbucket nós podemos publicar em homolog nosso ambiente de desenvolvimento com o comando: 
+E após o *CODACY* aprovar o pull-request no Bitbucket nós devemos fazer o sync da branch `develop` na `master` do bitbucket para só então fazer o push no homolog.  
 
 ```bash
-git merge origin homolog 
+git checkout master
+```
+
+```bash
+git merge origin/develop
+```
+
+```bash
+git push origin master
+```
+
+Só então fazer o push para homolog.
+
+```bash
+git push homolog develop
 ```
 
 Espero ter ajudado. 
