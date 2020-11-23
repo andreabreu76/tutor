@@ -86,18 +86,12 @@ Então:
 
 - Todo push feito em *homolog* irá publicar no REPO CodeCommit
 
-E após o *CODACY* aprovar o pull-request no Bitbucket nós devemos fazer o sync da branch `develop` na `master` do bitbucket para só então fazer o push no homolog.  
+
+Após o *CODACY* aprovar sua pull-request de alteração no Bitbucket nós devemos fazer o pull da branch `develop` do bitbucket para só então fazer o push no homolog.  
+
 
 ```bash
-git checkout master
-```
-
-```bash
-git merge origin/develop
-```
-
-```bash
-git push origin master
+git pull origin develop
 ```
 
 Só então fazer o push para homolog.
