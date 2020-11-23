@@ -4,7 +4,7 @@ Aqui eu utilizo chaves ssh, tanto para o bitbucket quanto para o CodeCommit. Ent
 
 Primeiro, criamos nossa chave. Caso vc já tenha a sua por favor pule este passo. 
 
-De acordo com o artigo [Secure Secure Shell]([Secure Secure Shell](https://stribika.github.io/2015/01/04/secure-secure-shell.html)) a forma mais segura em 2020 de ter uma chave encripitada é executando o ssh-keygen utilizando os parametros abaixo.
+De acordo com o artigo [Secure Secure Shell](https://stribika.github.io/2015/01/04/secure-secure-shell.html) a forma mais segura em 2020 de ter uma chave encripitada é executando o ssh-keygen utilizando os parametros abaixo.
 
 ```bash
 ssh-keygen -t ed25519 -a 100
