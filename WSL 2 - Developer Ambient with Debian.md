@@ -142,9 +142,9 @@ Primeiro, criamos nossa chave. Caso vc já tenha a sua por favor pule este passo
 ssh-keygen -t rsa -b 4096 -o -a 100
 ```
 
-Lembre-se de dar um nome diferente para esta chave. Afinal ela não será de uso pessoal. 
+> Dê um nome diferente para esta chave. Afinal ela não será de uso pessoal. 
 
-Copie sua chave publica:
+Copie sua chave publica com o comando:
 
 ```bash
 cat ~/.ssh/chavesegura_profissional.pub
@@ -152,11 +152,11 @@ cat ~/.ssh/chavesegura_profissional.pub
 
 Para aplicar sua chave no bitbucket acesse https://bitbucket.org/account/settings/ssh-keys/  Insira sua chave seguindo  as instruções.
 
-No caso da AWS é necessário um passo a mais. Acesse o console AWS, vá até o IAM, em gerenciamento de acesso, vá até usuários e selecione seu usuário na lista. 
+No caso da AWS é necessário um passo a mais. 
 
-Agora acesse a aba credenciais de segurança e clique sobre o botão "Fazer Upload de chave publica SSH"
-
-Agora vem aquele passo extra! Com sua chave adicionada, copie o "ID da chave do SSH" e crie um arquivo. 
+- Acesse o console AWS, vá até o IAM, em gerenciamento de acesso, vá até usuários e selecione seu usuário na lista. 
+- Agora acesse a aba credenciais de segurança e clique sobre o botão "Fazer Upload de chave publica SSH"
+- Agora vem aquele passo extra! Com sua chave adicionada, copie o "ID da chave do SSH" e crie um arquivo. 
 
 ```bash
 nano -w ~/.ssh/config
