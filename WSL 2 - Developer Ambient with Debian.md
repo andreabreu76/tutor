@@ -130,7 +130,36 @@ Verifique a instalação
 ```bash
 kubectl version --client
 ```
-### Chaves SSH para serviços GIT/CodeCommit/BitBucket
+#### Configurando o Git 
+
+Setando as configurações globais
+
+```bash
+git config --global user.name "<Your-Full-Name>"
+```
+```bash
+git config --global user.email "<your-email-address>"
+```
+
+Uns opcionais
+
+```bash
+git config --global color.ui auto
+```
+```bash
+git config --global merge.conflictstyle diff3
+```
+```bash
+git config --global core.editor "code --wait"
+```
+
+Verifique se está tudo correto:
+
+```bash
+git config --list
+```
+
+#### Chaves SSH para serviços GIT/CodeCommit/BitBucket
 
 Aqui eu utilizo chaves ssh, tanto para o bitbucket quanto para o CodeCommit ou GitHub. Então primeiro vou mostrar como configurar este tipo de acesso em ambos os ambientes.
 
@@ -205,16 +234,11 @@ origin  git@bitbucket.org:meuusuario/microservico.git (push)
 Então: 
 
 - Todo pull feito em *origin* irá puxar do REPO Bitibucket.
-
 - Todo push feito em *origin* irá publicar no REPO Bitbucket
-
 - Todo pull feito em *homolog* irá puxar do REPO CodeCommit
-
 - Todo push feito em *homolog* irá publicar no REPO CodeCommit
 
-
 Após o *CODACY* aprovar sua pull-request de alteração no Bitbucket nós devemos fazer o pull da branch `develop` do bitbucket para só então fazer o push no homolog.  
-
 
 ```bash
 git pull origin develop
