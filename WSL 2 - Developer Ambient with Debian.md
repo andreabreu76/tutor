@@ -1,4 +1,4 @@
-# WSL 2 - Developer Ambient with Debian
+# WSL 2 - Developer Ambient
 
 #### Basics
 
