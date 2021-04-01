@@ -42,11 +42,16 @@ Install on ubuntu
 sudo apt install php7.4-common php7.4-fpm php7.4-gd php7.4-mysql php7.4-curl php7.4-intl php7.4-mbstring php7.4-bcmath php7.4-imap php7.4-xml php7.4-zip libmcrypt-dev php-tokenizer libmagickwand-dev
 ```
 
-Check install:
+Check install (Debian or Ubuntu):
 
 ```bash
 php --version && php-fpm7.3 --version
 ```
+
+```bash
+php --version && php-fpm7.4 --version
+```
+
 
 #### Composer
 
@@ -64,8 +69,8 @@ sudo php composer-setup.php --install-dir=/usr/local/bin/ --filename=composer
 composer global require laravel/installer
 ```
 
-```bash
-export PATH='$PATH:$HOME/.composer/vendor/bin'
-```
+Add next line on your .bashrc end file. 
 
-Add last line on your .bashrc end file. 
+```bash
+export PATH=$PATH:$HOME/.composer/vendor/bin
+```
