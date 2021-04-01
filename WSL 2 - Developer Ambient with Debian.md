@@ -33,13 +33,39 @@ node -v && npm -v
 Install on Debian
 
 ```bash
-sudo apt install php7.3-common php7.3-fpm php7.3-gd php7.3-mysql php7.3-curl php7.3-intl php7.3-mbstring php7.3-bcmath php7.3-imap php7.3-xml php7.3-zip libmcrypt-dev php-tokenizer libmagickwand-dev
+sudo apt install -y php7.3-common \
+php7.3-fpm \
+php7.3-gd \
+php7.3-mysql \
+php7.3-curl \
+php7.3-intl \
+php7.3-mbstring \
+php7.3-bcmath \
+php7.3-imap \
+php7.3-xml \
+php7.3-zip \
+libmcrypt-dev \
+php-tokenizer \
+libmagickwand-dev
 ```
 
 Install on ubuntu
 
 ```bash
-sudo apt install php7.4-common php7.4-fpm php7.4-gd php7.4-mysql php7.4-curl php7.4-intl php7.4-mbstring php7.4-bcmath php7.4-imap php7.4-xml php7.4-zip libmcrypt-dev php-tokenizer libmagickwand-dev
+sudo apt install -y php7.4-common \
+php7.4-fpm \
+php7.4-gd \
+php7.4-mysql \
+php7.4-curl \
+php7.4-intl \
+php7.4-mbstring \
+php7.4-bcmath \
+php7.4-imap \
+php7.4-xml \
+php7.4-zip \
+libmcrypt-dev \
+php-tokenizer \
+libmagickwand-dev
 ```
 
 Check install (Debian or Ubuntu):
