@@ -179,6 +179,18 @@ Copie sua chave publica com o comando:
 cat ~/.ssh/chavesegura_profissional.pub
 ```
 
+Inicie o agente SSH (Principalmente se você copiou a chave de outro computador)
+
+```bash
+ssh-agent bash
+```
+
+E finalize adicionando sua chave ao gereciador do sistema (Repita este comando apontando para cada chave que queria utilizar).
+
+```bash
+ssh-add ~/.ssh/chavesegura_profissional.pub
+```
+
 Para aplicar sua chave no bitbucket acesse https://bitbucket.org/account/settings/ssh-keys/  Insira sua chave seguindo  as instruções.
 
 No caso da AWS é necessário um passo a mais. 
