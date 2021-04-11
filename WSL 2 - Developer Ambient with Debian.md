@@ -18,6 +18,10 @@ Agora uma facilidade, adicione o grupo ao nopasswd. Lembrando que isso é recome
 echo "%adm  ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers.d/adm.sudoers
 ```
 
+```bash
+exit
+```
+
 Pronto  agore seguieremos.
 
 #### Basics
