@@ -25,7 +25,7 @@ sudo dpkg -i fonts-cascadia-code_2005.15-1_all.deb
 Agora vamos a instalação do powerline
 
 ```bash
-sudo apt install powerline powerline-gitstatus python-powerline python3-powerline vim-airline
+sudo apt install -y powerline powerline-gitstatus python3-powerline vim-airline
 ```
 
 Após a instalação vamos ativar o powerline em seu BASH simplestmente pondo as linhas a seguir ao fim do seu arquivo $HOME/.bashrc
