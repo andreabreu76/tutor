@@ -1,5 +1,25 @@
 # WSL 2 - Developer Ambient
 
+#### Auth
+
+```bash
+sudo su -
+```
+
+Configure uma senha forte. Você utilizará sempre o sudo, mas com vamos ir além de simples comandos. Algo pode dar errado e com esse login ativado, podemos reverter facilmente
+
+```bash
+passwd
+```
+
+Agora uma facilidade, adicione o grupo ao nopasswd. Lembrando que isso é recomendavel somente caso vc esteja utilizando um desktop ou dispositivo mais seguro. 
+
+```bash
+echo "%adm    ALL=NOPASSWD: ALL" >> /etc/sudoers.d/adm.sudoers
+```
+
+Pronto  agore seguieremos.
+
 #### Basics
 
 ```bash
