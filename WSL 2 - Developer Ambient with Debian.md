@@ -54,9 +54,9 @@ node -v && npm -v
 
 Adicione repositorios do PHP8
 
+```bash
 sudo add-apt-repository ppa:ondrej/php
-
-
+```
 
 Install on Debian versão 7.3 (última versão estável para Debian)
 
