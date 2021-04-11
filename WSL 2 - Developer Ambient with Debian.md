@@ -15,7 +15,7 @@ passwd
 Agora uma facilidade, adicione o grupo ao nopasswd. Lembrando que isso é recomendavel somente caso vc esteja utilizando um desktop ou dispositivo mais seguro. 
 
 ```bash
-echo "%adm    ALL=NOPASSWD: ALL" >> /etc/sudoers.d/adm.sudoers
+echo "%adm  ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers.d/adm.sudoers
 ```
 
 Pronto  agore seguieremos.
@@ -35,7 +35,7 @@ sudo apt install -y vim wget curl git ssh unzip
 #### Node.js
 
 ```bash
-sudo curl -sL https://deb.nodesource.com/setup_14.x | sudo bash -
+sudo curl -sL https://deb.nodesource.com/setup_15.x | sudo bash -
 ```
 
 ```bash
@@ -50,7 +50,15 @@ node -v && npm -v
 
 #### PHP
 
-Install on Debian
+> Caso não deseje instalar o PHP 8 pule esse passo
+
+Adicione repositorios do PHP8
+
+sudo add-apt-repository ppa:ondrej/php
+
+
+
+Install on Debian versão 7.3 (última versão estável para Debian)
 
 ```bash
 sudo apt install -y php7.3-common \
@@ -69,7 +77,7 @@ php-tokenizer \
 libmagickwand-dev
 ```
 
-Install on ubuntu
+Install on ubuntu versão 7.4 (última versão estável para Ubuntu)
 
 ```bash
 sudo apt install -y php7.4-common \
@@ -87,6 +95,26 @@ libmcrypt-dev \
 php-tokenizer \
 libmagickwand-dev
 ```
+
+Install on ubuntu versão 8 (última versão estável do PHP)
+
+```bash
+sudo apt install -y php8.0-common \
+php8.0-fpm \
+php8.0-gd \
+php8.0-mysql \
+php8.0-curl \
+php8.0-intl \
+php8.0-mbstring \
+php8.0-bcmath \
+php8.0-imap \
+php8.0-xml \
+php8.0-zip \
+libmcrypt-dev \
+php-tokenizer \
+libmagickwand-dev
+```
+
 
 Check install (Debian or Ubuntu):
 
