@@ -5,7 +5,7 @@ Primeiro caso esteja utilizando WSL instale as devidas fontes em seu sistema Win
 instale as fontes em sua distro WSL ou sistema Linux também.
 
 ```bash
-sudo apt install fonts-powerline fonts-cascadia-code
+sudo apt install fonts-powerline fonts-cascadia-code fonts-firacode
 ```
 
 Caso a instalação do pacote <mark>fonts-cascadia-code</mark> dê erro é porque ele não encontra-se em seu repositorio. Então devemos proceguir com a instalação manual. 
