@@ -1,4 +1,4 @@
-# WSL 2 - Developer Ambient
+#Developer Ambient (Linux/WSL2)
 
 #### Auth
 
@@ -6,7 +6,7 @@
 sudo su -
 ```
 
-Configure uma senha forte. Você utilizará sempre o sudo, mas com vamos ir além de simples comandos. Algo pode dar errado e com esse login ativado, podemos reverter facilmente
+Configure uma senha forte. Você utilizará sempre o sudo, mas como vamos ir além de simples comandos. Algo pode dar errado e com esse login ativado, podemos reverter facilmente
 
 ```bash
 passwd
