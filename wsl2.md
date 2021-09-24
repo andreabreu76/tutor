@@ -88,6 +88,105 @@ Check install:
 node -v && npm -v
 ```
 
+#### PHP
+
+> Caso não deseje instalar o PHP 8 pule esse passo
+
+Adicione repositorios do PHP8
+
+```bash
+sudo add-apt-repository ppa:ondrej/php
+```
+
+Install on Debian versão 7.3 (última versão estável para Debian)
+
+```bash
+sudo apt install -y php7.3-common \
+php7.3-fpm \
+php7.3-gd \
+php7.3-mysql \
+php7.3-curl \
+php7.3-intl \
+php7.3-mbstring \
+php7.3-bcmath \
+php7.3-imap \
+php7.3-xml \
+php7.3-zip \
+libmcrypt-dev \
+php-tokenizer \
+libmagickwand-dev
+```
+
+Install on ubuntu versão 7.4 (última versão estável para Ubuntu)
+
+```bash
+sudo apt install -y php7.4-common \
+php7.4-fpm \
+php7.4-gd \
+php7.4-mysql \
+php7.4-curl \
+php7.4-intl \
+php7.4-mbstring \
+php7.4-bcmath \
+php7.4-imap \
+php7.4-xml \
+php7.4-zip \
+libmcrypt-dev \
+php-tokenizer \
+libmagickwand-dev
+```
+
+Install on ubuntu versão 8 (última versão estável do PHP)
+
+```bash
+sudo apt install -y php8.0-common \
+php8.0-fpm \
+php8.0-gd \
+php8.0-mysql \
+php8.0-curl \
+php8.0-intl \
+php8.0-mbstring \
+php8.0-bcmath \
+php8.0-imap \
+php8.0-xml \
+php8.0-zip \
+libmcrypt-dev \
+php-tokenizer \
+libmagickwand-dev
+```
+
+Check install (Debian or Ubuntu):
+
+```bash
+php --version && php-fpm7.3 --version
+```
+
+```bash
+php --version && php-fpm7.4 --version
+```
+
+#### Composer
+
+```bash
+php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+```
+
+```bash
+sudo php composer-setup.php --install-dir=/usr/local/bin/ --filename=composer
+```
+
+#### Laravel
+
+```bash
+composer global require laravel/installer
+```
+
+Add next line on your .bashrc end file. 
+
+```bash
+export PATH=$PATH:$HOME/.composer/vendor/bin
+```
+
 ### Configurando o Git
 
 Setando as configurações globais
