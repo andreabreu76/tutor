@@ -168,6 +168,19 @@ Verifique a instalação
 aws --version
 ```
 
+Para configurar com suas credenciais use o comando:
+
+```bash
+aws configure
+```
+
+Para verificar se já tem cnfiguração use o comando: 
+
+```bash
+aws configure list
+```
+
+
 #### Kubectl
 
 instalação, em seu terminal cole o comando:
