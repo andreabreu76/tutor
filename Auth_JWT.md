@@ -34,7 +34,7 @@ composer create-project laravel/laravel laravelJwtAuth --prefer-dist
 ```
 Terminada a instalação, acesso o arquivo `.env` com o editor de minha preferencia e configuro os parâmetros de acesso ao meu banco de dados que no caso é um MySQL.
 
-```json
+```env
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
 DB_PORT=3306
