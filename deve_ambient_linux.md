@@ -15,7 +15,7 @@ sudo apt install -y vim wget curl git ssh unzip
 #### Node.js
 
 ```bash
-sudo curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
+sudo curl -sL https://deb.nodesource.com/setup_16.x | sudo -E bash -
 ```
 
 ```bash
